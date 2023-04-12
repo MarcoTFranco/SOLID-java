@@ -1,4 +1,4 @@
-package rh.service;
+package rh.service.reajuste;
 
 import rh.model.Funcionario;
 
@@ -16,7 +16,7 @@ public class ReajusteService {
     public void reajuste(Funcionario funcionario, BigDecimal aumento) {
         validacaoReajustes.forEach(v -> v.valida(funcionario, aumento));
 
-        var salarioNovo = funcionario.getSalario().add(aumento);
+        var salarioNovo = funcionario.getDadosPessoais().getSalario().add(aumento);
         funcionario.ajustarSalario(salarioNovo);
     }
 

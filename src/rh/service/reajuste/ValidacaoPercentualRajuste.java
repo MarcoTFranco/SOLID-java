@@ -1,4 +1,4 @@
-package rh.service;
+package rh.service.reajuste;
 
 import rh.ValidacaoException;
 import rh.model.Funcionario;
@@ -9,7 +9,7 @@ import java.math.RoundingMode;
 public class ValidacaoPercentualRajuste implements ValidacaoReajuste{
     @Override
     public void valida(Funcionario funcionario, BigDecimal aumento) {
-        var salario = funcionario.getSalario();
+        var salario = funcionario.getDadosPessoais().getSalario();
 
         BigDecimal percentualReajuste = aumento.divide(salario, RoundingMode.HALF_UP);
         if (percentualReajuste.compareTo(new BigDecimal("0.4")) > 0) {

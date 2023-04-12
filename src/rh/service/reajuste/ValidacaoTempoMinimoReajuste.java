@@ -1,4 +1,4 @@
-package rh.service;
+package rh.service.reajuste;
 
 import rh.ValidacaoException;
 import rh.model.Funcionario;
